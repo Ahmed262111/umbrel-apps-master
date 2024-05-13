@@ -1,0 +1,39 @@
+manifestVersion: 1.1
+id: jam
+category: bitcoin
+name: Jam
+version: "0.2.0"
+tagline: Your sats. Your privacy. Your profit.
+description: >-
+  Jam is a user-interface for JoinMarket with focus on
+  user-friendliness.
+
+  It is time for top-notch privacy for your bitcoin. Widespread use of JoinMarket improves bitcoin's fungibility and privacy for all.
+
+
+  The app provides sensible defaults and is easy to use for beginners while still providing the features advanced users expect.
+releaseNotes: >-
+  - Feature: You can now renew an expired fidelity bond in a straightforward manner
+
+  - Fees: Sending funds now allows for customizable fee settings for both direct and collaborative sends
+
+  - Version: It's now readily apparent what version of Jam you're running, along with what version of JoinMarket
+
+  - UI: Various UI improvements and bugfixes
+developer: JoinMarket WebUI Org.
+website: https://jamapp.org
+dependencies:
+  - bitcoin
+repo: https://github.com/joinmarket-webui/jam
+support: https://github.com/joinmarket-webui/jam/issues
+port: 5002
+gallery:
+  - 1.jpg
+  - 2.jpg
+  - 3.jpg
+path: ""
+defaultUsername: umbrel
+defaultPassword: ""
+deterministicPassword: true
+submitter: JoinMarket WebUI Org.
+submission: https://github.com/getumbrel/umbrel/pull/1216

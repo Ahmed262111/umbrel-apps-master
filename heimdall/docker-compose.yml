@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: heimdall_server_1
+      APP_PORT: 80
+      PROXY_AUTH_ADD: "false"
+
+  server:
+    image: linuxserver/heimdall:2.6.1@sha256:03117a80287343e245d50f2e85968b6cbed867ddd5e4e273924bbe588a73b958
+    volumes:
+      - ${APP_DATA_DIR}/config:/config
+    environment:
+      - PUID=1000
+      - PGID=1000
+    restart: on-failure

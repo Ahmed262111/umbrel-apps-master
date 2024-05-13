@@ -1,0 +1,36 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: lnbits_web_1
+      APP_PORT: 3007
+      PROXY_AUTH_ADD: "false"
+  
+  web:
+    image: lnbits/lnbits:0.12.2@sha256:ce11b1127ab9a6314ed5a57792dcd938ee189c2f549888f6cdda21a181a12fc9
+    init: true
+    restart: on-failure
+    stop_grace_period: 1m
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+      - ${APP_LIGHTNING_NODE_DATA_DIR}:/lnd:ro
+    environment:
+      # Global
+      LNBITS_HOST: "0.0.0.0"
+      LNBITS_PORT: 3007
+      LNBITS_DATA_FOLDER: "/data"
+
+      # LND
+      LNBITS_BACKEND_WALLET_CLASS: LndRestWallet
+      LND_REST_ENDPOINT: https://$APP_LIGHTNING_NODE_IP:$APP_LIGHTNING_NODE_REST_PORT/
+      LND_REST_CERT: "/lnd/tls.cert"
+      LND_REST_MACAROON: "/lnd/data/chain/bitcoin/$APP_BITCOIN_NETWORK/admin.macaroon"
+
+      # App
+      LNBITS_SITE_TITLE: "LNbits - Umbrel"
+      LNBITS_DEFAULT_WALLET_NAME: "LNbits wallet"
+      LNBITS_DISABLED_EXTENSIONS: "amilk"
+      LNBITS_ADMIN_EXTENSIONS: "ngrok"
+      LNBITS_ADMIN_UI: "true"
+      SUPER_USER: "$APP_PASSWORD"

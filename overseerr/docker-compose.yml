@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: overseerr_server_1
+      APP_PORT: 5055
+      PROXY_AUTH_WHITELIST: "/api/*"
+
+  server:
+    image: linuxserver/overseerr:1.33.2@sha256:711c465b65d36a01580f995043a240eedaac0aa31321a8d95fa8f29f0ff8299d
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - ${APP_DATA_DIR}/data/config:/config
+    restart: on-failure

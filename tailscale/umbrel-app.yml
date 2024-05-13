@@ -1,0 +1,43 @@
+manifestVersion: 1
+id: tailscale
+category: networking
+name: Tailscale
+version: "v1.62.1"
+tagline: Zero config VPN to access your Umbrel from anywhere
+description: >-
+  Tailscale is zero config VPN that creates a secure network between
+  your Umbrel and your other devices. Even when separated by firewalls or
+  subnets, Tailscale just works.
+
+
+  Tailscale will assign your Umbrel a stable IP and an auto-assigned domain that stays consistent, no matter what network your Umbrel is connected to. It’s like a local network that works everywhere.
+
+
+  Tailscale builds on top of WireGuard®’s Noise protocol encryption, a peer-reviewed and trusted standard.
+developer: Tailscale Inc.
+website: https://tailscale.com
+dependencies: []
+repo: https://github.com/tailscale/tailscale
+support: https://tailscale.com/contact/support
+port: 8240
+gallery:
+  - 1.jpg
+  - 2.jpg
+  - 3.jpg
+path: ""
+deterministicPassword: false
+torOnly: false
+releaseNotes: |
+  This release updates Tailscale from v1.56.1 to v1.62.1, and includes: 
+
+  - Enhanced Access Control: Enhanced security with Access Control Lists (ACLs) for managing permissions on tagged devices.
+
+  - Expanded DNS Options: Added Mullvad's family-friendly server to the list of well known DNS over HTTPS (DoH) servers.
+
+  - Improved Request Handling: DNS over HTTP requests now come with a set timeout.
+
+  - and more!
+
+  Full release notes and detailed information is available at https://github.com/tailscale/tailscale/releases
+submitter: Umbrel
+submission: https://github.com/getumbrel/umbrel/pull/1248

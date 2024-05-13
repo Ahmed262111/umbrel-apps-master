@@ -1,0 +1,30 @@
+manifestVersion: 1.1
+id: invoice-ninja
+category: finance
+name: Invoice Ninja
+version: "v5.8.33"
+tagline: We’ll help with the invoicing
+description: |-
+  Invoicing, Quotes, Expenses, Tasks.
+
+  Invoice Ninja is an invoicing application which makes sending invoices and receiving payments simple and easy. Our latest version is a clean slate rewrite of our popular invoicing application which builds on the existing feature set and adds a wide range of features and enhancements the community has asked for.
+developer: InvoiceNinja, Inc.
+website: https://invoiceninja.com
+dependencies: []
+repo: https://github.com/invoiceninja/invoiceninja
+support: https://forum.invoiceninja.com/
+port: 8676
+gallery:
+- 1.jpg
+- 2.jpg
+- 3.jpg
+path: ''
+releaseNotes: >-
+  This release takes invoice-ninja from version 5.8.15 to 5.8.33.
+
+
+  Full release notes here: https://github.com/invoiceninja/invoiceninja/releases
+deterministicPassword: true
+defaultUsername: admin@example.com
+submitter: Umbrel
+submission: https://github.com/getumbrel/umbrel-apps/pull/347
